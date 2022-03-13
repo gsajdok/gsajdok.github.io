@@ -1,8 +1,8 @@
 import {useEffect, useState} from "react";
+import {RoundBar} from "./Decorations";
 
 export const ConsoleWindow = () => {
     const [currentLocation, setLocation] = useState(["src", "components"]);
-    const menuItems = ["File", "Edit", "View", "Run", "Tools", "Help"];
 
     return (
         <div className="window">
@@ -10,21 +10,20 @@ export const ConsoleWindow = () => {
                 <div className="icon">
                     💪
                 </div>
-                <nav className="menu">
+                <div className="menu">
                     <ol>
-                        {menuItems.map((element) => (
-                            <li><span>{element}</span></li>
+                        {Array.from(Array(5)).map((element, index) => (
+                            <li key={index}><RoundBar color="white" width="2rem"/></li>
                         ))}
                     </ol>
-                </nav>
+                </div>
             </div>
             <div className="navigationBar">
                 <div className="location">
                     <ol>
                         <li>gsajdok.github.io</li>
-                        {currentLocation.map(element => (
-                            <li>{element}</li>
-                        ))}
+                        <li><RoundBar color="green" width="1rem"/></li>
+                        <li><RoundBar color="red" width="4rem"/></li>
                     </ol>
                 </div>
             </div>
@@ -37,14 +36,14 @@ export const ConsoleWindow = () => {
             </div>
             <div className="leftBar">
                 <div className="tree">
-                    <div className="folder order-1">node_modules</div>
-                    <div className="folder order-1">public</div>
-                    <div className="folder order-1">src</div>
-                    <div className="folder order-2">components</div>
-                    <div className="file order-3">Welcome.js</div>
-                    <div className="file order-3">AboutMe.js</div>
-                    <div className="file order-3">Projects.js</div>
-                    <div className="file order-3">Contact.js</div>
+                    <div className="folder order-1"><RoundBar color="blue" width="5rem"/></div>
+                    <div className="folder order-1"><RoundBar color="yellow" width="2rem"/></div>
+                    <div className="folder order-1 highlight"><RoundBar color="green" width="1rem"/></div>
+                    <div className="folder order-2 highlight"><RoundBar color="red" width="4rem"/></div>
+                    <div className="file order-3 active">Welcome.js</div>
+                    <div className="file order-3"><RoundBar color="white" width="4rem"/></div>
+                    <div className="file order-3"><RoundBar color="white" width="2rem"/></div>
+                    <div className="photo order-3"><RoundBar color="white" width="6rem"/></div>
                 </div>
             </div>
             <div className="content">
