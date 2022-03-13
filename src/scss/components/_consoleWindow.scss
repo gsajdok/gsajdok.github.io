@@ -255,10 +255,10 @@
 }
 .consoleWindowVisitAnimation-enter-active {
   opacity: 1;
-  transform: translateY(20%);
+  transform: translateY(0%);
   transition: transform 500ms, opacity 500ms;
 }
 .consoleWindowVisitAnimation-enter-done {
   opacity: 1;
-  transform: translateY(20%);
+  transform: translateY(0%);
 }

@@ -1,8 +1,16 @@
 import {useEffect, useState} from "react";
 import {RoundBar} from "./Decorations";
+import {Autotyper} from "./Autotyper";
 
 export const ConsoleWindow = () => {
-    const [currentLocation, setLocation] = useState(["src", "components"]);
+    const [animationStep, setAnimationStep] = useState(0);
+    const [delayAnimationStep, setDelayAnimationStep] = useState(animationStep);
+
+    useEffect( () => {
+        setTimeout(() => {
+            setDelayAnimationStep(animationStep);
+        }, 1000)
+    }, [animationStep])
 
     return (
         <div className="window">
@@ -22,8 +30,8 @@ export const ConsoleWindow = () => {
                 <div className="location">
                     <ol>
                         <li>gsajdok.github.io</li>
-                        <li><RoundBar color="green" width="1rem"/></li>
-                        <li><RoundBar color="red" width="4rem"/></li>
+                        <li><RoundBar color="white" width="1rem"/></li>
+                        <li><RoundBar color="white" width="4rem"/></li>
                     </ol>
                 </div>
             </div>
@@ -36,14 +44,14 @@ export const ConsoleWindow = () => {
             </div>
             <div className="leftBar">
                 <div className="tree">
-                    <div className="folder order-1"><RoundBar color="blue" width="5rem"/></div>
-                    <div className="folder order-1"><RoundBar color="yellow" width="2rem"/></div>
-                    <div className="folder order-1 highlight"><RoundBar color="green" width="1rem"/></div>
-                    <div className="folder order-2 highlight"><RoundBar color="red" width="4rem"/></div>
+                    <div className="folder order-1"><RoundBar color="white" width="5rem"/></div>
+                    <div className="folder order-1"><RoundBar color="white" width="2rem"/></div>
+                    <div className="folder order-1 highlight"><RoundBar color="white" width="1rem"/></div>
+                    <div className="folder order-2 highlight"><RoundBar color="white" width="4rem"/></div>
                     <div className="file order-3 active">Welcome.js</div>
                     <div className="file order-3"><RoundBar color="white" width="4rem"/></div>
                     <div className="file order-3"><RoundBar color="white" width="2rem"/></div>
-                    <div className="photo order-3"><RoundBar color="white" width="6rem"/></div>
+                    <div className="file order-3"><RoundBar color="white" width="6rem"/></div>
                 </div>
             </div>
             <div className="content">
@@ -53,11 +61,25 @@ export const ConsoleWindow = () => {
                             <div className="rowCounter_element">{index}</div>
                         ))}
                     </div>
-                    <div className="text">
-                        <p>My name is <b>Grzegorz Sajdok</b></p>
-                        <p>I'm a graduate of Rzeszów University of Technology with specialisation in Avionics</p>
-                        <p>After finishing the studies I've been exploring my love towards programming and design</p>
-                        <p>Today, I'm working on achieving new successes in the field of <b>Front End Development</b></p>
+                    <div>
+                        <p><Autotyper
+                            text="My name is Grzegorz Sajdok"
+                            activate={delayAnimationStep===0}
+                            callbackFunction={setAnimationStep} /></p>
+                        <p><Autotyper
+                            text="I'm a graduate of Rzeszów University of Technology with specialisation in Avionics"
+                            activate={delayAnimationStep===1}
+                            callbackFunction={setAnimationStep}
+                        /></p>
+                        <p><Autotyper
+                            text="After finishing the studies I've been exploring my love towards programming and design"
+                            activate={delayAnimationStep===2}
+                            callbackFunction={setAnimationStep}
+                        /></p>
+                        <p><Autotyper
+                            text="Today, I'm working on achieving new successes in the field of Front End Development"
+                            activate={delayAnimationStep===3}
+                        /></p>
                     </div>
                 </div>
             </div>
