@@ -12,10 +12,10 @@ export const App = () => {
       <>
           <Header/>
           <Welcome/>
-          <AboutMe/>
-          <Projects/>
-          <Contact/>
-          <Footer/>
+          {/*<AboutMe/>*/}
+          {/*<Projects/>*/}
+          {/*<Contact/>*/}
+          {/*<Footer/>*/}
       </>
   );
 }
