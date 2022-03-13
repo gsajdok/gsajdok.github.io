@@ -1,10 +1,12 @@
-import {useEffect, useState} from "react";
+import {useEffect, useMemo, useRef, useState} from "react";
 import {RoundBar} from "./Decorations";
 import {Autotyper} from "./Autotyper";
 
 export const ConsoleWindow = () => {
     const [animationStep, setAnimationStep] = useState(0);
     const [delayAnimationStep, setDelayAnimationStep] = useState(animationStep);
+    const consoleHeight = useRef(null);
+
 
     useEffect( () => {
         setTimeout(() => {
@@ -58,10 +60,10 @@ export const ConsoleWindow = () => {
                 <div className="code">
                     <div className="rowCounter">
                         {Array.from(Array(40)).map((element, index) => (
-                            <div className="rowCounter_element">{index}</div>
+                            <div className="rowCounter_element">{index+1}</div>
                         ))}
                     </div>
-                    <div>
+                    <div className="text" ref={consoleHeight}>
                         <p><Autotyper
                             text="My name is Grzegorz Sajdok"
                             activate={delayAnimationStep===0}
