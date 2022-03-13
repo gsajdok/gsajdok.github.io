@@ -7,7 +7,8 @@ export const RoundBar = ({color, width}) => {
                     height: "0",
                     width: `${width}`,
                     borderRadius: "20rem",
-                    display: "inline-block"
+                    display: "inline-block",
+                    backgroundColor: "white"
                 }
             }/>
     )

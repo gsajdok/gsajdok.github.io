@@ -1,0 +1,16 @@
+.typing {
+  &::after {
+    content: "|";
+    animation: blink 1s step-start infinite;
+  }
+}
+
+.typed {
+
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
