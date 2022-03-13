@@ -1,9 +1,12 @@
 @import 'vendors/normalize.css';
 
 @import 'utilities/variables';
+
 @import 'base/body';
+@import 'base/reset';
 
 @import 'components/consoleWindow';
 
 @import 'pages/index';
 @import 'pages/welcome';
+@import 'pages/aboutme';

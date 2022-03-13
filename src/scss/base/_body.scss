@@ -3,3 +3,7 @@ body {
   font-family: SegoeUI, sans-serif;
   color: $textWhiteColor;
 }
+
+html {
+  background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%) fixed;
+}
