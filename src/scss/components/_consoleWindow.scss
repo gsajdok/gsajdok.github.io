@@ -48,13 +48,6 @@
           height: 100%;
           padding: 0 1rem;
 
-          span {
-            display: inline-block;
-            &::first-letter {
-              text-decoration: underline;
-            }
-          }
-
           &:hover {
             background-color: $windowComponentBrightColor;
           }
@@ -83,16 +76,26 @@
         list-style: none;
         margin: 0;
         padding: 0;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
 
         li {
-          display: inline-block;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
 
           &:first-child {
             font-weight: bold;
           }
 
+          &:not(:first-child) {
+            padding-left: 0.25rem;
+          }
+
           &:not(:last-child)::after {
-            content: ' >';
+            content: '>';
+            padding-left: 0.25rem;
           }
         }
       }
@@ -135,11 +138,11 @@
         padding-bottom: 0.1rem;
         padding-top: 0.1rem;
 
-        &:hover {
+        &:hover, &.highlight {
           background-color: $windowComponentBrightColor;
         }
 
-        &:active {
+        &:active, &.active {
           background-color: $windowComponentBrighterColor;
         }
       }
@@ -154,9 +157,17 @@
       .file {
 
         &::before {
-          content: '📜';
+          content: '📄';
         }
       }
+
+      .photo {
+
+        &::before {
+          content: '🖼️';
+        }
+      }
+
 
       @for $i from 1 through 3 {
         .order-#{$i} {
