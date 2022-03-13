@@ -1,4 +1,9 @@
 .window {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 50rem;
   overflow: hidden;
   border-radius: $windowComponentRadius;
   display: flex;
@@ -231,4 +236,18 @@
       transition: opacity linear 0.2s;
     }
   }
+}
+
+.consoleWindowVisitAnimation-enter {
+  opacity: 0;
+  transform: translateY(100%);
+}
+.consoleWindowVisitAnimation-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: transform 500ms, opacity 500ms;
+}
+.consoleWindowVisitAnimation-enter-done {
+  opacity: 1;
+  transform: translateY(0);
 }
