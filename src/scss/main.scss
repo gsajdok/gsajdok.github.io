@@ -1,3 +1,8 @@
+@import 'vendors/normalize.css';
+
+@import 'utilities/variables';
 @import 'base/body';
+
+@import 'components/windowComponent';
 
 @import 'pages/index';

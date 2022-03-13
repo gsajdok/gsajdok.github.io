@@ -1,0 +1,234 @@
+.window {
+  overflow: hidden;
+  border-radius: $windowComponentRadius;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: 0 auto;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+  &> * {
+    box-sizing: border-box;
+    box-shadow: inset 0 0 0 1px $windowComponentBrighterColor;
+  }
+
+  .topBar {
+    min-height: 3rem;
+    flex-basis: 100%;
+    background-color: $windowComponentDarkColor;
+    padding-left: 1rem;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    .icon {
+      padding-right: 1rem;
+      flex-shrink: 0;
+    }
+
+    .menu {
+      height: 100%;
+
+      ol {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+
+        li {
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+          padding: 0 1rem;
+
+          span {
+            display: inline-block;
+            &::first-letter {
+              text-decoration: underline;
+            }
+          }
+
+          &:hover {
+            background-color: $windowComponentBrightColor;
+          }
+
+          &:active {
+            background-color: $windowComponentBrighterColor;
+          }
+        }
+      }
+    }
+  }
+
+  .navigationBar {
+    min-height: 3rem;
+    flex-basis: 100%;
+    background-color: $windowComponentBrightColor;
+    padding-left: 1rem;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    .location {
+
+      ol {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+          display: inline-block;
+
+          &:first-child {
+            font-weight: bold;
+          }
+
+          &:not(:last-child)::after {
+            content: ' >';
+          }
+        }
+      }
+    }
+  }
+
+  .leftBarHeader {
+    flex-basis: 25%;
+    background-color: $windowComponentBrightColor;
+    padding: 0.4rem 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .contentHeader {
+    flex-basis: 75%;
+    background-color: $windowComponentBrightColor;
+
+    .tab {
+      padding: 0.4rem 1rem;
+      display: inline-block;
+      background-color: $windowComponentBrighterColor;
+      border-bottom: 2px solid $windowComponentAccentColor;
+
+      &:hover {
+        background-color: $windowComponentHighlightColor;
+      }
+    }
+  }
+
+  .leftBar {
+    min-height: 15rem;
+    flex-basis: 25%;
+    background-color: $windowComponentDarkColor;
+
+    .tree {
+
+      & > * {
+        padding-bottom: 0.1rem;
+        padding-top: 0.1rem;
+
+        &:hover {
+          background-color: $windowComponentBrightColor;
+        }
+
+        &:active {
+          background-color: $windowComponentBrighterColor;
+        }
+      }
+
+      .folder {
+
+        &::before {
+          content: '📁';
+        }
+      }
+
+      .file {
+
+        &::before {
+          content: '📜';
+        }
+      }
+
+      @for $i from 1 through 3 {
+        .order-#{$i} {
+          padding-left: ($i - 1) * 1rem + 1rem;
+        }
+      }
+    }
+  }
+
+  .content {
+    min-height: 15rem;
+    flex-basis: 75%;
+    background-color: $windowComponentBrightColor;
+    font-family: $codeFont;
+    font-size: 1.5rem;
+    position: relative;
+    overflow: hidden;
+
+    .code {
+      padding: 0 3rem;
+      line-height: 2rem;
+
+      .text {
+        position: relative;
+        z-index: 2;
+        pointer-events: none;
+
+        p {
+          margin: 0;
+          margin-bottom: 2rem;
+        }
+      }
+      .rowCounter {
+        position: absolute;
+        left: 0.5rem;
+        top: 0;
+        opacity: 50%;
+        height: 100%;
+        font-weight: 100;
+        font-size: 1rem;
+        width: 100%;
+
+        .rowCounter_element {
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-end;
+          width: 100%;
+
+          &:hover {
+            background-color: $windowComponentBrighterColor;
+          }
+        }
+      }
+    }
+  }
+
+  .bottomBar {
+    min-height: 3rem;
+    flex-basis: 100%;
+    background-color: $windowComponentBrightColor;
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    &:hover {
+
+      .credits {
+        opacity: 100%;
+      }
+    }
+
+    .credits {
+      font-size: 0.8rem;
+      opacity: 50%;
+      transition: opacity linear 0.2s;
+    }
+  }
+}
