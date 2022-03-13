@@ -1,0 +1,16 @@
+.welcome_section {
+  height: 100vh;
+
+  .wrapper {
+    height: 100%;
+
+    width: 80%;
+    margin: 0 auto;
+
+    .consoleWindowWrapper {
+      height: 100%;
+      position: relative;
+      margin: 0 auto;
+    }
+  }
+}
