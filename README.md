@@ -12,7 +12,7 @@ The project is created with:
 - Autotyping solution for typewriter-like animations
 
 ### To do:
-- Further segments, such as About, Contact, Portfolio
+- More segments, such as About, Contact, Portfolio
 
 
 ## Usage
