@@ -13,8 +13,8 @@ export const App = () => {
           <Header/>
           <Footer/>
           <Welcome/>
-          {/*<AboutMe/>*/}
-          {/*<Projects/>*/}
+          <AboutMe/>
+          <Projects/>
           {/*<Contact/>*/}
 
       </>
