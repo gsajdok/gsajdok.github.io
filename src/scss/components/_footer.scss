@@ -1,0 +1,24 @@
+.footer_section {
+  position: fixed;
+  padding: 2rem;
+  bottom: 0;
+  right: 0;
+
+  .icons {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+
+
+    img {
+      width: 64px;
+      height: 64px;
+      filter: grayscale(100%) invert(100%) brightness(1000%);
+      transition: transform 0.2s ease-in-out;
+
+      &:hover {
+        transform: translatey(-10%);
+      }
+    }
+  }
+}

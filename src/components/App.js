@@ -11,11 +11,12 @@ export const App = () => {
   return (
       <>
           <Header/>
+          <Footer/>
           <Welcome/>
           {/*<AboutMe/>*/}
           {/*<Projects/>*/}
           {/*<Contact/>*/}
-          {/*<Footer/>*/}
+
       </>
   );
 }
