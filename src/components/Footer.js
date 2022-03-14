@@ -1,5 +1,6 @@
 import GitHubIcon from '../assets/GitHub64.png'
 import LinkedInIcon from '../assets/LinkedIn64.png';
+import Mail from '../assets/Mail.png';
 
 export const Footer = () => {
     return (
@@ -7,6 +8,7 @@ export const Footer = () => {
             <div className="icons">
                 <div className="linkedin"><a href="https://www.linkedin.com/in/grzegorz-sajdok/"><img src={LinkedInIcon} alt=""/></a></div>
                 <div className="github"><a href="https://github.com/gsajdok"><img src={GitHubIcon} alt=""/></a></div>
+                <div className="github"><a href="mailto:grzegorzsajdok@outlook.com"><img src={Mail} alt=""/></a></div>
             </div>
         </div>
     )
