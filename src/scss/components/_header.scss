@@ -19,10 +19,18 @@
     padding-top: 1rem;
 
     li {
-      opacity: 0.6;
 
-      &.active {
-        opacity: 1;
+      a {
+        opacity: 0.6;
+        transition: opacity linear 0.5s;
+
+        &:hover {
+          cursor: pointer;
+          opacity: 0.8;
+        }
+        &.active {
+          opacity: 1;
+        }
       }
 
       &:not(:first-child) {

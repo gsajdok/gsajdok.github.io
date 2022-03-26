@@ -10,7 +10,7 @@ export const Welcome = () => {
     }, [])
 
     return (
-        <div className="welcome_section">
+        <div className="welcome_section" name="welcome">
             <div className="wrapper">
                 <div className="consoleWindowWrapper">
                     <CSSTransition

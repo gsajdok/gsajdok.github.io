@@ -20,7 +20,7 @@ export const Projects = () => {
     ];
 
     return (
-        <div className="projects_section">
+        <div className="projects_section" name="projects">
             <div className="wrapper">
                 <div className="title"><h2>Projects</h2></div>
                 <div className="projects_container">

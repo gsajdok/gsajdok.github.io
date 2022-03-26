@@ -20,7 +20,7 @@ export const AboutMe = () => {
     }, [])
 
     return (
-        <div className={`aboutme_section ${show ? "fadeOut" : ""}`}>
+        <div className={`aboutme_section ${show ? "fadeOut" : ""}`} name="aboutme">
             <div className="wrapper">
                 <div className="title" ref={aboutmeRef}><h2>About Me</h2></div>
                 <div className="text">
