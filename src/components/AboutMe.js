@@ -10,7 +10,6 @@ export const AboutMe = () => {
 
         const onScroll = () => {
             const scrollPosition = window.scrollY + window.innerHeight;
-            console.log(aboutMePos)
             if(aboutMePos < scrollPosition) {
                 doShow(true);
             }
