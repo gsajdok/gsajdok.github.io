@@ -60,7 +60,7 @@ export const ConsoleWindow = () => {
                 <div className="code">
                     <div className="rowCounter">
                         {Array.from(Array(40)).map((element, index) => (
-                            <div className="rowCounter_element">{index+1}</div>
+                            <div key={index+1} className="rowCounter_element">{index+1}</div>
                         ))}
                     </div>
                     <div className="text" ref={consoleHeight}>
