@@ -69,7 +69,14 @@
             font-size: 1.2rem;
           }
 
+          .button_wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+          }
+
           .project_button {
+            display: inline-block;
 
             a {
               text-decoration: none;
@@ -77,6 +84,11 @@
               border: 2px solid $windowComponentAccentColor;
               border-radius: 0.2rem;
               padding: 0.5rem;
+              transition: background-color linear 0.2s;
+
+              &:hover {
+                background-color: rgba($windowComponentAccentColor, 0.2);
+              }
             }
           }
 

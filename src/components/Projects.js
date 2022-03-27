@@ -5,17 +5,19 @@ export const Projects = () => {
     const Projects = [
         {
             id: 1,
-          image: project1,
-          name: "Personal page",
-          description: "My own personal page. You are here!",
-          link: "https://github.com/gsajdok/gsajdok.github.io"
+            image: project1,
+            name: "Personal page",
+            description: "My own personal page. You are here!",
+            repository: "https://github.com/gsajdok/gsajdok.github.io",
+            link: "/"
         },
         {
             id: 2,
             image: project2,
             name: "Oddam w dobre rece",
             description: "Page for an item sharing service, using Firebase auth and database",
-            link: "https://github.com/gsajdok/oddam_w_dobre_rece_project"
+            repository: "https://github.com/gsajdok/oddam_w_dobre_rece_project",
+            link: "/oddam_w_dobre_rece_project"
         }
     ];
 
@@ -31,7 +33,9 @@ export const Projects = () => {
                                 <div className="project_text">
                                     <div className="project_name">{element.name}</div>
                                     <div className="project_description">{element.description}</div>
-                                    <div className="project_button"><a href={element.link}>Go to Github</a></div>
+                                    <div className="button_wrapper">
+                                        <div className="project_button"><a href={element.repository}>Repository</a></div>
+                                        <div className="project_button"><a href={element.link}>Preview</a></div></div>
                                 </div>
                             </div>
                         )
