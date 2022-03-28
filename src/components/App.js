@@ -6,6 +6,8 @@ import {Header} from "./Header";
 import {Projects} from "./Projects";
 import {Contact} from "./Contact";
 import {Footer} from "./Footer";
+import {Copyright} from "./Copyright";
+
 
 export const App = () => {
   return (
@@ -16,7 +18,7 @@ export const App = () => {
           <AboutMe/>
           <Projects/>
           {/*<Contact/>*/}
-
+          <Copyright/>
       </>
   );
 }

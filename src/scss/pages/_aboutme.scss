@@ -1,6 +1,6 @@
 .aboutme_section {
-  height: 25rem;
-  padding: 5rem 0;
+  min-height: 45rem;
+  padding: 10rem 0;
   margin: 0 2rem;
 
   .wrapper {
@@ -18,57 +18,66 @@
       font-size: 2rem;
     }
 
-  }
+    .animation_wrapper {
+      max-width: 0rem;
+      overflow: hidden;
+      transition: max-width linear 2s;
 
+      &.rollOut {
+        animation-name: rollOutAnimation;
+        animation-duration: 0.5s;
+        animation-delay: 1.5s;
+        animation-timing-function: cubic-bezier(.46,.15,.68,1);
+        animation-fill-mode: forwards;
+        animation-iteration-count: 1;
+      }
 
-  @keyframes fadeOut {
-    100% {
-      opacity: 0;
-    }
-  }
-
-  h2::before {
-    content: '<h2>';
-  }
-
-  h2::after {
-    content: '</h2>'
-  }
-
-  h3::before {
-    content: '<h3>';
-  }
-
-  h3::after {
-    content: '</h3>'
-  }
-
-  p::before {
-    content: '<p> ';
-  }
-
-  p::after {
-    content: '</p> '
-  }
-
-  h2::before, h2::after, p::before, p::after, h3::before, h3::after {
-    @extend .tagFormatting;
-  }
-
-  &.fadeOut {
-    h2, h3, p {
-      &::before, &::after {
-        animation: fadeOut 1s ease-in-out forwards;
-        animation-delay: 2s;
+      &:last-child { //invert github logo
+        img {
+          filter: invert(255);
+        }
       }
     }
-  }
 
-  .tagFormatting {
-    padding: 0.5rem;
-    color: green;
-    font-family: $codeFont;
-    font-size: 1rem;
-    opacity: 0.7;
+    .skills_group {
+      padding-top: 3rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      @media (max-width: 1250px) {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .skill {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        width: 15rem;
+
+        .title {
+          overflow: hidden;
+          white-space: nowrap;
+        }
+
+        .image {
+
+          img {
+            width: 6rem;
+
+          }
+        }
+
+      }
+
+
+    }
+
   }
+}
+
+@keyframes rollOutAnimation {
+  from {max-width: 0rem;}
+  to {max-width: 15rem;}
 }
